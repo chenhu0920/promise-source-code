@@ -19,8 +19,8 @@ getNumber()
        console.log('resolved');
        console.log(data);
     },function(reason, data){
-       console.log('reject');
-       console.log(reason); // 数字太大
-        console.log(data); // undefined
+         console.log('reject');
+         console.log(reason); // 数字太大
+         console.log(data); // undefined
       });
  ```

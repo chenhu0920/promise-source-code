@@ -25,5 +25,8 @@ getNumber()
       });
  ```
  运行结果：
- 当随机数字小于5时：
-
+  当随机数字小于5时：
+  ![image](https://github.com/chenhu0920/promise-source-code/blob/master/docs/img/1542804249955.jpg)
+  
+  当随机数字大于等于5时：
+  ![image](https://github.com/chenhu0920/promise-source-code/blob/master/docs/img/1542805473904.jpg)

@@ -1,4 +1,5 @@
 
+```
 function getNumber(){
    var p=new Promise(function(resolve,reject){
       setTimeout(function(){
@@ -22,3 +23,4 @@ getNumber()
        console.log(reason); // 数字太大
         console.log(data); // undefined
       });
+ ```

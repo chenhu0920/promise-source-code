@@ -4,7 +4,7 @@ function getNumber(){
    var p=new Promise(function(resolve, reject){
       setTimeout(function(){
           var num=Math.ceil(Math.random()*10); // 生成1-10 之间的随机数 Math.ceil(): 大于或等于给定数字的最小整数
-          if(num<=5){
+          if(num < 5){
             resolve(num);
            }else{
              reject('数字太大了')
@@ -15,7 +15,7 @@ function getNumber(){
 }
 
 getNumber()
-  .then(function(data){
+  .then(function (data) {
        console.log('resolved');
        console.log(data);
     },function(reason, data){
@@ -24,3 +24,6 @@ getNumber()
          console.log(data); // undefined
       });
  ```
+ 运行结果：
+ 当随机数字小于5时：
+

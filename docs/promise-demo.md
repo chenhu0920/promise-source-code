@@ -26,11 +26,11 @@ getNumber()
  ```
  运行结果：
   当随机数字小于5时：<br/>
-    resolved
-    4
+      resolved
+      4
   
-  当随机数字大于等于5时：
-   reject
-   数字太大了
-   undefined
+  当随机数字大于等于5时：<br/>
+     reject<br/>
+     数字太大了<br/>
+     undefined<br/>
 

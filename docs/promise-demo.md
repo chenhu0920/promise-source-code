@@ -48,7 +48,7 @@ getNumber()
          console.log(data); // undefined
       });
  ```
- 运行结果：
+ 运行结果：<br/>
   当随机数字小于5时：<br/>
       resolved<br/>
       4

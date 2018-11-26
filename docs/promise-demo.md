@@ -15,7 +15,7 @@ step1(function (value1) {
 ```
 NOW
 ---
-为了解决回调函数带来的问题，Promise作为一种更优雅的异步解决方案。Promise 的设计思想是，所有异步任务都返回一个 Promise 实例，所以就不需要上面一次又一层的方法了。Promise 实例有一个then方法，用来指定下一步的回调函数.如下<br/>
+为了解决回调函数带来的问题，Promise 实例有一个then方法，用来指定下一步的回调函数.如下<br/>
 ```
 (new Promise(step1))
   .then(step2)
@@ -58,6 +58,9 @@ getNumber()
      数字太大了<br/>
      undefined<br/>
 
-这是一个Promise的例子，Promise是一个构造函数，实例化之后，
+这是一个Promise的例子，Promise是一个构造函数，实例化之后随机生成数字，<br>
+当数字 <5时，即**异步执行成功**，则立刻执行then中注册的resolve方法，返回随机num<br>
+当数字 >=5时，即**异步执行失败**，则立刻执行reject方法，返回 '数字太大了'
+
 
 

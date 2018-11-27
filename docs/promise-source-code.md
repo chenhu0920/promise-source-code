@@ -64,7 +64,7 @@ __promise的执行流程/步骤__
 * MyPromise类设置基属性 _status，_value，_fulfilledQueues，_rejectedQueues<br>
 * 然后在try中立即执行handle方法，即new MyPromise((resolve, reject))中的(resolve, reject)，<br>
  handle函数包含 resolve 和 reject 两个参数，它们是两个函数，可以用于改变 Promise 的状态和传入 Promise 的值，<br>
- 接下来执行--resolve('返回值')--：
+* 接下来执行--resolve('返回值')--：
  
 ### Promise 状态和值 pending, Fulfilled, rejected
 ```

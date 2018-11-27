@@ -16,7 +16,7 @@ p1.then(f2);
 ```
 接下来是对Promise源码的解析：<br>
 1. Promise 基本结构
-2. MyPromise类
+2. Promise类
 3. Promise 状态和值 pending, Fulfilled, rejected
 4. Promise 的核心: then 方法
 

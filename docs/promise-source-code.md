@@ -15,13 +15,13 @@ var p1 = new Promise(f1);
 p1.then(f2);
 ```
 接下来是对Promise源码的解析，首先先顺一下promise源码执行的流程：<br>
-1. 先执行执行MyPromise方法，获取MyPromise类的基本属性，并调用MyPromise的resolve方法，给resolve传值，
-虽然f1函数首先执行，但是由于在调用resolve和reject的时候，使用了setTimeout。虽然是延迟0秒执行，但是我们知道js是单线程+消息队列，
+1. 先执行执行MyPromise方法，获取MyPromise类的基本属性，并调用MyPromise的resolve方法，给resolve传值，<br>
+虽然f1函数首先执行，但是由于在调用resolve和reject的时候，使用了setTimeout。虽然是延迟0秒执行，但是我们知道js是单线程+消息队列，<br>
 所以紧接着执行then方法，给resolveFunc和rejectFunc赋值
 
 
 
-
+```
 
 // 判断变量否为function
   const isFunction = variable => typeof variable === 'function'
@@ -220,3 +220,4 @@ p1.then(f2);
       );
     }
   }
+```

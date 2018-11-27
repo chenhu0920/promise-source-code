@@ -20,16 +20,24 @@ p1.then(f2);
 3. Promise 的核心: then 方法
 
 ### Promise 基本结构  
-在使用中，定义func方法，
 ```
+new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('FULFILLED')
+  }, 1000)
+})
+
+eg:
 let func = function() {
     return new MyPromise((resolve, reject) => {
         resolve('返回值');
     });
 };
 ```
-通过new MyPromise调用MyPromise类即：<br>
+构造函数Promise必须接受一个函数作为参数，我们称该函数为handle，handle又包含resolve和reject两个参数，它们是两个函数。
 
+### MyPromise类
+func中，通过new MyPromise调用MyPromise类即：<br>
 ```
 class MyPromise {
     constructor (handle) {
@@ -52,7 +60,7 @@ class MyPromise {
       }
     }
 ```
-
+__promise的执行流程/步骤__
 * MyPromise类设置基属性 _status，_value，_fulfilledQueues，_rejectedQueues<br>
 * 然后在try中立即执行handle方法，即new MyPromise((resolve, reject))中的(resolve, reject)，<br>
  handle函数包含 resolve 和 reject 两个参数，它们是两个函数，可以用于改变 Promise 的状态和传入 Promise 的值，<br>

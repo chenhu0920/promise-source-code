@@ -38,7 +38,7 @@ let func = function() {
 构造函数Promise必须接受一个函数作为参数，我们称该函数为handle，handle又包含resolve和reject两个参数，它们是两个函数。
 
 ### MyPromise类
-func中，通过new MyPromise调用MyPromise类即：<br>
+上面例子的func中，通过new MyPromise调用MyPromise类即：<br>
 ```
 class MyPromise {
     constructor (handle) {

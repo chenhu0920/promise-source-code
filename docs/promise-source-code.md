@@ -20,7 +20,7 @@ p1.then(f2);
 3. Promise 状态和值 pending, Fulfilled, rejected
 4. Promise 的核心: then 方法
 
-### Promise 基本结构  
+### 1. Promise 基本结构  
 ```
 new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -37,7 +37,7 @@ let func = function() {
 ```
 构造函数Promise必须接受一个函数作为参数，我们称该函数为handle，handle又包含resolve和reject两个参数，它们是两个函数。
 
-### MyPromise类
+### 2. MyPromise类
 上面例子的func中，通过new MyPromise调用MyPromise类即：<br>
 ```
 class MyPromise {

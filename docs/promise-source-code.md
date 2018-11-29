@@ -67,7 +67,7 @@ __promise的执行流程/步骤__
  handle函数包含 resolve 和 reject 两个参数，它们是两个函数，可以用于改变 Promise 的状态和传入 Promise 的值，<br>
 * 接下来执行--resolve('返回值')--：
  
-### Promise 状态和值 pending, Fulfilled, rejected
+### 3. Promise 状态和值 pending, Fulfilled, rejected
 ```
     // 添加resovle时执行的函数
     _resolve (val) {
@@ -109,7 +109,7 @@ __promise的执行流程/步骤__
       setTimeout(run, 0)
     }
 ```
-### Promise 的核心: then 方法
+### 4. Promise 的核心: then 方法
 * 执行到_resolve中的run方法时，由于setTimeout(run, 0)，则异步执行.then()方法。虽然是延迟0秒执行，但是我们知道js是单线程+消息队列，必须等主线程代码执行完毕才能开始执行消息队列当中的代码。因此，会首先执行then这个方法。then执行完毕后，再执行setTimeout里面的方法。<br>
 如果有多个.then()回调，则会接着执行主线程上的代码。通过 test1 运行结果可以看出，then方法内部先执行,只有等待resolve返回结果的在setTimeout后执行：<br>
 __test1:__
@@ -203,7 +203,7 @@ __then方法的源码__
       })
     }
 ```
-### Promise 对象then 的结构
+### 5. Promise 对象then 的结构
 Promise 对象的 then 方法接受两个参数：
 ```
 promise.then(onFulfilled, onRejected)

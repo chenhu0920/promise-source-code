@@ -19,6 +19,8 @@ p1.then(f2);
 2. Promise类
 3. Promise 状态和值 pending, Fulfilled, rejected
 4. Promise 的核心: then 方法
+5. Promise 对象then 的结构
+6. Promise的全部源码
 
 ### 1. Promise 基本结构  
 ```
@@ -111,7 +113,8 @@ __promise的执行流程/步骤__
 ```
 ### 4. Promise 的核心: then 方法
 * 执行到_resolve中的run方法时，由于setTimeout(run, 0)，则异步执行.then()方法。虽然是延迟0秒执行，但是我们知道js是单线程+消息队列，必须等主线程代码执行完毕才能开始执行消息队列当中的代码。因此，会首先执行then这个方法。then执行完毕后，再执行setTimeout里面的方法。<br>
-如果有多个.then()回调，则会接着执行主线程上的代码。通过 test1 运行结果可以看出，then方法内部先执行,只有等待resolve返回结果的在setTimeout后执行：<br>
+如果有多个.then()回调，由于then()方法return Promise，返回新的Promise类，因此可以链式调用，则会接着执行主线程上的代码，接着执行then方法。<br>
+通过 test1 运行结果可以看出，then方法内部先执行,只有等待resolve返回结果的在setTimeout后执行：<br>
 __test1:__
 ```
 let func = function() {
@@ -238,8 +241,7 @@ __用通俗的话来说__
   
 [结合源码，通过https://segmentfault.com/a/1190000010420744可更清晰的了解then](https://segmentfault.com/a/1190000010420744)
 
-全部源码
--
+### 6. Promise全部源码
 
 ```
 // 判断变量否为function
